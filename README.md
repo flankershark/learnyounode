@@ -1,2 +1,2 @@
 # learnyounode
-Babe steps for reloading
+Babe steps for reloading your *node*
