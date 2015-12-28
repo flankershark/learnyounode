@@ -37,7 +37,7 @@ function reply_error(err_mesg) {
     };
 }
 
-function dispatch(req) {
+function reply(req) {
     var u = url.parse(req.url, true);
     var response = null;
     
@@ -59,7 +59,7 @@ function dispatch(req) {
 
 ;(function () {
     http.createServer(function (req, res) {
-        var body_str = JSON.stringify(dispatch(req));
+        var body_str = JSON.stringify(reply(req));
         res.writeHead(200, { 'Content-Type': 'application/json', 'Content-Length': body_str.length });
         res.end(body_str);
     }).listen(process.argv[2]);
